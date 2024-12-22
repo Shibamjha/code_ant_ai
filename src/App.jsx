@@ -1,16 +1,19 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Auth from "./pages/Auth.jsx";
 
 function App() {
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+     <div className={`flex min-h-screen w-full bg-[#FAFAFA]`}>
+         <Routes>
+             <Route path={'/'} Component={Auth} />
+             <Route path={'/repo'} Component={Home} />
+         </Routes>
+     </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
